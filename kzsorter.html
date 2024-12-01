@@ -439,15 +439,26 @@ var str = "";
 var i;
  
 
- 
-str += "<table style=\"width:200px; font-size:18px; line-height:120%; margin-left:auto; margin-right:auto; border:1px solid #000; border-collapse:collapse\" align=\"center\">";
- 
-str += "<tr><td style=\"color:#ffffff; background-color:#e097d9; text-align:center;\">rank<\/td><td style=\"color:#ffffff; background-color:#e097d9; text-align:center;\">options<\/td><\/tr>";
+ str += "<table style=\"width:300px; font-size:18px; line-height:120%; margin-left:auto; margin-right:auto; border:1px solid #000; border-collapse:collapse\" align=\"center\">";
+
+
 
  
 for (i=0; i<namMember.length; i++) {
- 
-str += "<tr><td style=\"border:1px solid #000; text-align:center; padding-right:5px;\">"+ranking+"<\/td><td style=\"border:1px solid #000; padding-left:5px;\">"+namMember[lstMember[0][i]]+"<\/td><\/tr>";
+
+
+if(i%4 ==0) {
+    str += "<tr><td style=\"border:1px solid #000; text-align:center; padding-right:5px;\">"+ranking+"<\/td><td style=\"border:1px solid #000; background-color: #ffeee3; padding-left:5px;\">"+namMember[lstMember[0][i]]+"<\/td>";
+}
+else if(i%4 ==1) {
+    str += "<td style=\"border:1px solid #000; text-align:center; padding-right:5px;\">"+ranking+"<\/td><td style=\"border:1px solid #000; background-color: #ffeee3; padding-left:5px;\">"+namMember[lstMember[0][i]]+"<\/td>";
+}
+else if(i%4 ==2) {
+    str += "<td style=\"border:1px solid #000; text-align:center; padding-right:5px;\">"+ranking+"<\/td><td style=\"border:1px solid #000; background-color: #ffeee3; padding-left:5px;\">"+namMember[lstMember[0][i]]+"<\/td>";
+}
+else if(i%4 ==3) {
+    str += "<td style=\"border:1px solid #000; text-align:center; padding-right:5px;\">"+ranking+"<\/td><td style=\"border:1px solid #000; background-color: #ffeee3; padding-left:5px;\">"+namMember[lstMember[0][i]]+"<\/td><\/tr>";
+}
  
 if (i<namMember.length-1) {
  
@@ -472,6 +483,7 @@ str += "<\/table>";
  
  
 document.getElementById("resultField").innerHTML = str;
+ 
  
 }
  
